@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="clwang.chunyu.me.testdetailrxandroid"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!--简单示例-->
+        <activity android:name=".SimpleActivity"/>
+
+        <!--更多示例-->
+        <activity android:name=".MoreActivity"/>
+
+        <!--Lambda示例-->
+        <activity android:name=".LambdaActivity"/>
+
+        <!--网络示例-->
+        <activity android:name=".NetworkActivity"/>
+
+        <!--网络示例-详细内容-->
+        <activity android:name=".NetworkDetailActivity"/>
+
+        <!--安全示例-详细内容-->
+        <activity android:name=".SafeActivity"/>
+    </application>
+
+</manifest>

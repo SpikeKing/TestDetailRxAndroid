@@ -1,0 +1,51 @@
+plugins {
+    id "me.tatarka.retrolambda" version "3.2.4"
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "clwang.chunyu.me.testdetailrxandroid"
+        minSdkVersion 17
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1' // RecyclerView
+
+    compile 'com.jakewharton:butterknife:7.0.1' // ButterKnife标注
+    compile 'io.reactivex:rxandroid:1.1.0' // RxAndroid
+    compile 'io.reactivex:rxjava:1.1.0' // 推荐同时加载RxJava
+
+    compile 'com.squareup.retrofit:retrofit:2.0.0-beta2' // Retrofit网络处理
+    compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta2' // Retrofit的rx解析库
+    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2' // Retrofit的gson库
+
+    compile 'com.squareup.picasso:picasso:2.5.2' // Picasso网络图片加载
+
+    compile 'com.trello:rxlifecycle:0.4.0' // RxLifecycle管理Rx的生命周期
+    compile 'com.trello:rxlifecycle-components:0.4.0' // RxLifecycle组件
+
+}

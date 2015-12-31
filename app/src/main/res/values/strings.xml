@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TestDetailRxAndroid</string>
+    <string name="test_button_simple">简单使用</string>
+    <string name="test_button_more">更多使用</string>
+    <string name="test_button_lambda">Lambda使用</string>
+    <string name="test_button_network">网络使用</string>
+    <string name="test_button_safe">线程安全</string>
+</resources>

@@ -117,6 +117,4 @@ public class BindingActivity extends AppCompatActivity {
         // Rx方式
         RxTextView.textChanges(mEtReactiveApproach).subscribe(mTvShow::setText);
     }
-
-
 }

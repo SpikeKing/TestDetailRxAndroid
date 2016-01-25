@@ -38,7 +38,9 @@
         <activity android:name=".SafeActivity"/>
 
         <!--RxBinding示例-->
-        <activity android:name=".BindingActivity"/>
+        <activity
+            android:name=".BindingActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

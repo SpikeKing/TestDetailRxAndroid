@@ -48,4 +48,8 @@ dependencies {
     compile 'com.trello:rxlifecycle:0.4.0' // RxLifecycle管理Rx的生命周期
     compile 'com.trello:rxlifecycle-components:0.4.0' // RxLifecycle组件
 
+    // RxBinding
+    compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
+    compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.3.0'
+    compile 'com.jakewharton.rxbinding:rxbinding-design:0.3.0'
 }

@@ -7,6 +7,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 import com.jakewharton.rxbinding.support.design.widget.RxSnackbar;
 import com.jakewharton.rxbinding.support.v7.widget.RxToolbar;
 import com.jakewharton.rxbinding.view.RxView;
+import com.jakewharton.rxbinding.widget.RxTextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -38,8 +41,9 @@ public class BindingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_binding);
         ButterKnife.bind(this);
 
-        initToolbar();
-        initFabButton();
+        initToolbar(); // 初始化Toolbar
+        initFabButton(); // 初始化Fab按钮
+        initEditText(); // 初始化编辑文本
     }
 
     // 初始化Toolbar
@@ -90,4 +94,29 @@ public class BindingActivity extends AppCompatActivity {
         String text = "Snackbar消失代码:" + event;
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
+
+    // 初始化编辑文本
+    private void initEditText() {
+        // 正常方式
+        mEtUsualApproach.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mTvShow.setText(s);
+            }
+
+            @Override public void afterTextChanged(Editable s) {
+
+            }
+
+        });
+
+        // Rx方式
+        RxTextView.textChanges(mEtReactiveApproach).subscribe(mTvShow::setText);
+    }
+
+
 }

@@ -41,4 +41,10 @@
         android:onClick="gotoSafeModule"
         android:text="@string/test_button_safe"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="gotoBindingModule"
+        android:text="@string/test_button_binding"/>
+
 </LinearLayout>

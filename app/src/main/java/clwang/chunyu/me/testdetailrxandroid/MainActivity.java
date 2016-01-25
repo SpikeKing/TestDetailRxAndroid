@@ -7,6 +7,11 @@ import android.view.View;
 
 import butterknife.ButterKnife;
 
+/**
+ * 主Activity, 用于跳转各个模块.
+ *
+ * @author wangchenlong
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -38,5 +43,10 @@ public class MainActivity extends AppCompatActivity {
     // 跳转线程安全的页面
     public void gotoSafeModule(View view) {
         startActivity(new Intent(this, SafeActivity.class));
+    }
+
+    // 跳转RxBinding的页面
+    public void gotoBindingModule(View view) {
+        startActivity(new Intent(this, BindingActivity.class));
     }
 }

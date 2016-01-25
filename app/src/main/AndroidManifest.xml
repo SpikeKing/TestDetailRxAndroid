@@ -36,6 +36,9 @@
 
         <!--安全示例-详细内容-->
         <activity android:name=".SafeActivity"/>
+
+        <!--RxBinding示例-->
+        <activity android:name=".BindingActivity"/>
     </application>
 
 </manifest>

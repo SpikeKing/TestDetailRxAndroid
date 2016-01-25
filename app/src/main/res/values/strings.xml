@@ -9,4 +9,7 @@
 
     <string name="usual_approach">常规方式</string>
     <string name="reactive_approach">响应方式</string>
+
+    <string name="menu_add">添加</string>
+    <string name="menu_delete">删除</string>
 </resources>

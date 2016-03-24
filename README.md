@@ -1,8 +1,7 @@
 # TestDetailRxAndroid
+详细解析 RxAndroid 的使用方式
 
 > 欢迎Follow我的[GitHub](https://github.com/SpikeKing)
-
-详细解析 RxAndroid 的使用方式
 
 博客: http://www.wangchenlong.org/
 

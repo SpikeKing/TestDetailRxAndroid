@@ -1,4 +1,4 @@
-package clwang.chunyu.me.testdetailrxandroid;
+package org.wangchenlong.testdetailrxandroid;
 
 import org.junit.Test;
 

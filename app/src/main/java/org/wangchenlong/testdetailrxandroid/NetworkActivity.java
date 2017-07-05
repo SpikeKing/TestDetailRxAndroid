@@ -1,4 +1,4 @@
-package clwang.chunyu.me.testdetailrxandroid;
+package org.wangchenlong.testdetailrxandroid;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,8 +7,8 @@ import android.support.v7.widget.RecyclerView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import clwang.chunyu.me.testdetailrxandroid.networks.UserListAdapter;
-import clwang.chunyu.me.testdetailrxandroid.networks.NetworkWrapper;
+import org.wangchenlong.testdetailrxandroid.networks.UserListAdapter;
+import org.wangchenlong.testdetailrxandroid.networks.NetworkWrapper;
 
 /**
  * Rx的网络请求方式

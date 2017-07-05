@@ -1,4 +1,4 @@
-package clwang.chunyu.me.testdetailrxandroid;
+package org.wangchenlong.testdetailrxandroid;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,8 +9,8 @@ import android.support.v7.widget.RecyclerView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import clwang.chunyu.me.testdetailrxandroid.networks.NetworkWrapper;
-import clwang.chunyu.me.testdetailrxandroid.networks.RepoListAdapter;
+import org.wangchenlong.testdetailrxandroid.networks.NetworkWrapper;
+import org.wangchenlong.testdetailrxandroid.networks.RepoListAdapter;
 
 /**
  * GitHub的库详细页面

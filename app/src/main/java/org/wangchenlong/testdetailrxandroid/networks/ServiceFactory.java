@@ -1,4 +1,4 @@
-package clwang.chunyu.me.testdetailrxandroid.networks;
+package org.wangchenlong.testdetailrxandroid.networks;
 
 import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;

@@ -1,4 +1,4 @@
-package clwang.chunyu.me.testdetailrxandroid.networks;
+package org.wangchenlong.testdetailrxandroid.networks;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;

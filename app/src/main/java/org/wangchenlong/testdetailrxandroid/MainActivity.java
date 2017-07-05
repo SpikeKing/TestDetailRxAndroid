@@ -1,11 +1,10 @@
-package clwang.chunyu.me.testdetailrxandroid;
+package org.wangchenlong.testdetailrxandroid;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import butterknife.ButterKnife;
 
 /**
  * 主Activity, 用于跳转各个模块.

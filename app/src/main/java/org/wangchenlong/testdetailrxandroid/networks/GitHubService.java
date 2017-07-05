@@ -1,4 +1,4 @@
-package clwang.chunyu.me.testdetailrxandroid.networks;
+package org.wangchenlong.testdetailrxandroid.networks;
 
 import retrofit.http.GET;
 import retrofit.http.Path;

@@ -1,4 +1,4 @@
-package clwang.chunyu.me.testdetailrxandroid;
+package org.wangchenlong.testdetailrxandroid;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,8 +8,10 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import rx.Observable;
+import rx.Scheduler;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * RxJava的基础讲解, 包含一个观察者(Observable), 两个订阅者(Subscriber).
@@ -21,7 +23,7 @@ public class SimpleActivity extends Activity {
     @Bind(R.id.simple_tv_text) TextView mTvText;
 
     // 观察事件发生
-    private Observable.OnSubscribe mObservableAction = new Observable.OnSubscribe<String>() {
+    private Observable.OnSubscribe<String> mObservableAction = new Observable.OnSubscribe<String>() {
         @Override public void call(Subscriber<? super String> subscriber) {
             subscriber.onNext(sayMyName()); // 发送事件
             subscriber.onCompleted(); // 完成事件
@@ -31,11 +33,9 @@ public class SimpleActivity extends Activity {
     // 订阅者, 接收字符串, 修改控件
     private Subscriber<String> mTextSubscriber = new Subscriber<String>() {
         @Override public void onCompleted() {
-
         }
 
         @Override public void onError(Throwable e) {
-
         }
 
         @Override public void onNext(String s) {
@@ -46,11 +46,9 @@ public class SimpleActivity extends Activity {
     // 订阅者, 接收字符串, 提示信息
     private Subscriber<String> mToastSubscriber = new Subscriber<String>() {
         @Override public void onCompleted() {
-
         }
 
         @Override public void onError(Throwable e) {
-
         }
 
         @Override public void onNext(String s) {
@@ -64,11 +62,11 @@ public class SimpleActivity extends Activity {
         ButterKnife.bind(this);
 
         // 注册观察活动
-        @SuppressWarnings("unchecked")
         Observable<String> observable = Observable.create(mObservableAction);
 
         // 分发订阅信息
-        observable.observeOn(AndroidSchedulers.mainThread());
+        observable.observeOn(AndroidSchedulers.mainThread()); // 主线程
+
         observable.subscribe(mTextSubscriber);
         observable.subscribe(mToastSubscriber);
     }

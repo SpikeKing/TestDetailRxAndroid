@@ -1,4 +1,4 @@
-package clwang.chunyu.me.testdetailrxandroid.networks;
+package org.wangchenlong.testdetailrxandroid.networks;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,8 +14,9 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import clwang.chunyu.me.testdetailrxandroid.NetworkActivity;
-import clwang.chunyu.me.testdetailrxandroid.R;
+
+import org.wangchenlong.testdetailrxandroid.NetworkActivity;
+import org.wangchenlong.testdetailrxandroid.R;
 
 /**
  * 显示列表

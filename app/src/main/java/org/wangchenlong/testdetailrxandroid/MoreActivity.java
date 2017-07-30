@@ -29,11 +29,12 @@ public class MoreActivity extends Activity {
     final List<String> mManyWordList = Arrays.asList(mManyWords);
 
     // Action类似订阅者, 设置TextView
-    private Action1<String> mTextViewAction = new Action1<String>() {
-        @Override public void call(String s) {
-            mTvText.setText(s);
-        }
-    };
+    private Action1<String> mTextViewAction =
+            new Action1<String>() {
+                @Override public void call(String s) {
+                    mTvText.setText(s);
+                }
+            };
 
     // Action设置Toast
     private Action1<String> mToastAction = new Action1<String>() {
@@ -43,25 +44,33 @@ public class MoreActivity extends Activity {
     };
 
     // 设置映射函数
-    private Func1<List<String>, Observable<String>> mOneLetterFunc = new Func1<List<String>, Observable<String>>() {
-        @Override public Observable<String> call(List<String> strings) {
-            return Observable.from(strings); // 映射字符串
-        }
-    };
+    private Func1<List<String>, Observable<String>> mOneLetterFunc =
+            new Func1<List<String>, Observable<String>>() {
+                @Override public Observable<String> call(List<String> strings) {
+                    return Observable.from(strings); // 映射字符串
+                }
+            };
 
     // 设置大写字母
-    private Func1<String, String> mUpperLetterFunc = new Func1<String, String>() {
-        @Override public String call(String s) {
-            return s.toUpperCase(); // 大小字母
-        }
-    };
+    private Func1<String, String> mUpperLetterFunc =
+            new Func1<String, String>() {
+                @Override public String call(String s) {
+                    return s.toUpperCase(); // 大小字母
+                }
+            };
 
     // 连接字符串
-    private Func2<String, String, String> mMergeStringFunc = new Func2<String, String, String>() {
-        @Override public String call(String s, String s2) {
-            return String.format("%s %s", s, s2); // 空格连接字符串
-        }
-    };
+    private Func2<String, String, String> mMergeStringFunc =
+            new Func2<String, String, String>() {
+                @Override public String call(String s, String s2) {
+                    return String.format("%s %s", s, s2); // 空格连接字符串
+                }
+            };
+
+    // 创建字符串
+    private static String sayMyName() {
+        return "Hello, I am your friend, Spike!";
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,10 +98,5 @@ public class MoreActivity extends Activity {
                 .flatMap(mOneLetterFunc)
                 .reduce(mMergeStringFunc)
                 .subscribe(mToastAction);
-    }
-
-    // 创建字符串
-    private String sayMyName() {
-        return "Hello, I am your friend, Spike!";
     }
 }

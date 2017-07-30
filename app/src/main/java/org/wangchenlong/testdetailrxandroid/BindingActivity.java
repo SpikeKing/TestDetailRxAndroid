@@ -29,12 +29,12 @@ import butterknife.ButterKnife;
  * Created by wangchenlong on 16/1/25.
  */
 public class BindingActivity extends AppCompatActivity {
-
     @Bind(R.id.rxbinding_t_toolbar) Toolbar mTToolbar;
+    @Bind(R.id.rxbinding_fab_fab) FloatingActionButton mFabFab;
+
     @Bind(R.id.rxbinding_et_usual_approach) EditText mEtUsualApproach;
     @Bind(R.id.rxbinding_et_reactive_approach) EditText mEtReactiveApproach;
     @Bind(R.id.rxbinding_tv_show) TextView mTvShow;
-    @Bind(R.id.rxbinding_fab_fab) FloatingActionButton mFabFab;
 
     @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,30 +46,14 @@ public class BindingActivity extends AppCompatActivity {
         initEditText(); // 初始化编辑文本
     }
 
-    // 初始化Toolbar
     private void initToolbar() {
-        // 添加菜单按钮
-        setSupportActionBar(mTToolbar);
-        ActionBar actionBar = getSupportActionBar();
-        // 添加浏览按钮
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
-
+        setSupportActionBar(mTToolbar); // 添加Toolbar
         RxToolbar.itemClicks(mTToolbar).subscribe(this::onToolbarItemClicked);
-
-        RxToolbar.navigationClicks(mTToolbar).subscribe(this::onToolbarNavigationClicked);
     }
 
-    // 点击Toolbar的项
     private void onToolbarItemClicked(MenuItem menuItem) {
         String m = "点击\"" + menuItem.getTitle() + "\"";
         Toast.makeText(this, m, Toast.LENGTH_SHORT).show();
-    }
-
-    // 浏览点击
-    private void onToolbarNavigationClicked(Void v) {
-        Toast.makeText(this, "浏览点击", Toast.LENGTH_SHORT).show();
     }
 
     @Override public boolean onCreateOptionsMenu(Menu menu) {
@@ -101,7 +85,6 @@ public class BindingActivity extends AppCompatActivity {
         mEtUsualApproach.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -109,9 +92,7 @@ public class BindingActivity extends AppCompatActivity {
             }
 
             @Override public void afterTextChanged(Editable s) {
-
             }
-
         });
 
         // Rx方式

@@ -12,11 +12,9 @@ import rx.Observable;
 public interface GitHubService {
     String ENDPOINT = "https://api.github.com";
 
-    // 获取个人信息
-    @GET("/users/{user}")
+    @GET("/users/{user}") // 获取个人信息
     Observable<UserListAdapter.GitHubUser> getUserData(@Path("user") String user);
 
-    // 获取库, 获取的是数组
-    @GET("/users/{user}/repos")
+    @GET("/users/{user}/repos") // 获取库, 获取的是数组
     Observable<RepoListAdapter.GitHubRepo[]> getRepoData(@Path("user") String user);
 }

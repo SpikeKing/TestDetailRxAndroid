@@ -24,19 +24,17 @@ import org.wangchenlong.testdetailrxandroid.R;
  * Created by wangchenlong on 15/12/31.
  */
 public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserViewHolder> {
-
     private List<GitHubUser> mUsers; // 用户名集合
-
     private NetworkActivity.UserClickCallback mCallback; // 用户点击项的回调
 
     public UserListAdapter(NetworkActivity.UserClickCallback callback) {
-        mUsers = new ArrayList<>();
         mCallback = callback;
+        mUsers = new ArrayList<>();
     }
 
     public void addUser(GitHubUser user) {
-        mUsers.add(user);
-        notifyItemInserted(mUsers.size() - 1); // 最后一位
+        mUsers.add(user);  // 添加数据
+        notifyItemInserted(mUsers.size() - 1);  // 更新最后一位
     }
 
     @Override public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -55,7 +53,6 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserVi
 
     // Adapter的ViewHolder
     public static class UserViewHolder extends RecyclerView.ViewHolder {
-
         @Bind(R.id.network_item_iv_user_picture) ImageView mIvUserPicture;
         @Bind(R.id.network_item_tv_user_name) TextView mTvUserName;
         @Bind(R.id.network_item_tv_user_login) TextView mTvUserLogin;
@@ -65,8 +62,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserVi
             super(itemView);
             ButterKnife.bind(this, itemView);
             // 绑定点击事件
-            itemView.setOnClickListener(v ->
-                    callback.onItemClicked(mTvUserLogin.getText().toString()));
+            itemView.setOnClickListener(v -> callback.onItemClicked(mTvUserLogin.getText().toString()));
         }
 
         // 绑定数据

@@ -51,6 +51,7 @@ public class LambdaActivity extends Activity {
                 .flatMap(Observable::from)
                 .reduce(this::mergeString)
                 .subscribe(this::showToast);
+//                .subscribe(s -> showToast(s));
     }
 
     // 创建字符串

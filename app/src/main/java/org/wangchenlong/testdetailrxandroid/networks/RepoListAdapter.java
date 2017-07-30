@@ -20,15 +20,16 @@ import butterknife.ButterKnife;
  */
 public class RepoListAdapter extends RecyclerView.Adapter<RepoListAdapter.RepoViewHolder> {
 
-    private ArrayList<GitHubRepo> mGitHubRepos;
+    private ArrayList<GitHubRepo> mGitHubRepos;  // 数据列表
 
     public RepoListAdapter() {
         mGitHubRepos = new ArrayList<>();
     }
 
+    // 动态修改列表数据
     public void addRepo(GitHubRepo gitHubRepo) {
         mGitHubRepos.add(gitHubRepo);
-        notifyItemInserted(mGitHubRepos.size() - 1);
+        notifyItemInserted(mGitHubRepos.size() - 1);  // 更新数据
     }
 
     @Override
@@ -47,7 +48,6 @@ public class RepoListAdapter extends RecyclerView.Adapter<RepoListAdapter.RepoVi
     }
 
     public static class RepoViewHolder extends RecyclerView.ViewHolder {
-
         @Bind(R.id.network_item_iv_repo_name) TextView mIvRepoName;
         @Bind(R.id.network_item_iv_repo_detail) TextView mIvRepoDetail;
 
@@ -69,6 +69,4 @@ public class RepoListAdapter extends RecyclerView.Adapter<RepoListAdapter.RepoVi
         public String description; // 描述
         public String language; // 语言
     }
-
-
 }

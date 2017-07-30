@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+
 import org.wangchenlong.testdetailrxandroid.networks.UserListAdapter;
 import org.wangchenlong.testdetailrxandroid.networks.NetworkWrapper;
 
@@ -16,7 +17,6 @@ import org.wangchenlong.testdetailrxandroid.networks.NetworkWrapper;
  * Created by wangchenlong on 15/12/31.
  */
 public class NetworkActivity extends Activity {
-
     @Bind(R.id.network_rv_list) RecyclerView mRvList; // 列表
 
     @Override protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class NetworkActivity extends Activity {
 
         // 设置适配器
         UserListAdapter adapter = new UserListAdapter(this::gotoDetailPage);
-        NetworkWrapper.getUsersInto(adapter);
+        NetworkWrapper.getUsersInto(adapter);  // 加载网络信息
         mRvList.setAdapter(adapter);
     }
 

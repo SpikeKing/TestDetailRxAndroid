@@ -1,3 +1,3 @@
 # TestDetailRxAndroid
 
-RxAndroid的开发完整教程，Created by C.L. Wang
+RxAndroid的开发完整样例，Created by C.L. Wang
